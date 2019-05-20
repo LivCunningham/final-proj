@@ -1,6 +1,8 @@
 let spaceX = {}
 let index = 0
 
+// fetch hero image
+
 const getHeroImage = () => {
   fetch(' https://sdg-astro-api.herokuapp.com/api/Nasa/apod ')
     .then(resp => {
@@ -15,6 +17,8 @@ const getHeroImage = () => {
     })
 }
 
+// fetch launch data
+
 const getFlightData = () => {
   fetch('https://sdg-astro-api.herokuapp.com/api/SpaceX/launches/upcoming')
     .then(resp => {
@@ -22,46 +26,71 @@ const getFlightData = () => {
     })
     .then(missions => {
       console.log(missions)
+      const spaceX = missions
+
       document.querySelector('.launch-title').textContent =
-        missions[0].mission_Name
+        spaceX[index].mission_name
       document.querySelector('.launch-site').textContent =
-        missions[index].launch_site.site_name_long
+        spaceX[index].launch_site.site_name_long
       document.querySelector('.launch-description').textContent =
-        missions[index].details
-      document
-        .querySelector('.button-left')
-        .addEventListener('click', function(e) {
-          if (index === 0) {
-            index = missions.length - 1
-          } else {
-            index--
-          }
-          showCurrentLaunch(missions[index])
-        })
-      document
-        .querySelector('.button-right')
-        .addEventListener('click', function(e) {
-          if (index === missions.length - 1) {
-            index = 0
-          } else {
-            index++
-          }
-          showCurrentLaunch(missions[index])
-        })
+        spaceX[index].details
+
+      // // button click event listener
+      // document
+      //   .querySelector('.button-left')
+      //   .addEventListener('click', function(e) {
+      //     if (index === 0) {
+      //       index = missions.length -= 1
+      //     // } else {
+      //     //   index--
+      //     // }
+      //     showCurrentLaunch(missions[index])
+      //   })
+      // document
+      //   .querySelector('.button-right')
+      //   .addEventListener('click', function(e) {
+      //     if (index === missions.length = 1) {
+      //       index = 0
+      //     // } else {
+      //     //   index++
+      //     // }
+      //     showCurrentLaunch(missions[index])
     })
 }
-const showCurrentLaunch = () => {
-  document.querySelector('.launch-title').textContent = spaceX.mission_Name
-  document.querySelector('.launch-description').textContent = spaceX.details
-  document.querySelector('.launch-site').textContent =
-    spaceX.launch_site.site_name_long
-  spaceX = missions
+
+const clearSlide = () => {
+  document.querySelector('.launch-title').textContent = ''
+  document.querySelector('.launch-description').textContent = ''
+  document.querySelector('.launch-site').textContent = ''
 }
+
+// if there is no Launch description
 
 const main = () => {
   getHeroImage()
   getFlightData()
-  showCurrentLaunch()
+  clearSlide()
 }
+
+//clear slide function
+
+// button click functions
+
+const clickLeft = () => {
+  clearSlide()
+  getFlightData()
+  index -= 1
+}
+
+const clickRight = () => {
+  clearSlide()
+  getFlightData()
+  index += 1
+}
+
+document.querySelector('.button-left').addEventListener('click', clearSlide)
+document.querySelector('.button-left').addEventListener('click', getFlightData)
+document.querySelector('.button-right').addEventListener('click', clearSlide)
+document.querySelector('.button-right').addEventListener('click', getFlightData)
 
 document.addEventListener('DOMContentLoaded', main)

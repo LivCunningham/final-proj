@@ -10,3 +10,109 @@ body {
   margin: 0;
   min-height: 100%;
 }
+
+.hero-image {
+  width: 100%;
+  height: 25rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image h1 {
+  color: white;
+}
+
+.nav-color {
+  background-color: #512da7;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 3rem;
+}
+
+.menu1 {
+  padding-left: 0.5rem;
+  font-size: 1rem;
+}
+
+nav.menu1 h1 {
+  color: white;
+}
+
+.sub-menu {
+  display: flex;
+}
+
+nav.sub-menu h4 {
+  color: white;
+}
+
+.contact {
+  padding-left: 2rem;
+  padding-right: 0.5rem;
+}
+
+.copy-right {
+  height: -1rem;
+  width: 100%;
+}
+
+.Upcoming-launch-title {
+  width: 100%;
+  height: 44px;
+  background-color: #fec107;
+  margin-top: -0.8rem;
+}
+
+.Upcoming-launch-title h1 {
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.launch {
+  width: 100%;
+  height: 15rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.launch-card {
+  width: 85%;
+  height: 10rem;
+  background-color: #ededed;
+  border-radius: 0.25rem;
+  padding-top: 2rem;
+  margin-top: 0.7rem;
+}
+
+.button-left {
+  height: 54px;
+}
+
+.mission-statement {
+  widows: 100%;
+  height: 8rem;
+  background-color: #d2c4e5;
+  margin-top: -1.4rem;
+}
+
+.mission-statement h1 {
+  padding-top: 1rem;
+  padding-left: 36rem;
+}
+
+.mission-statement p {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+footer {
+  width: 100%;
+  height: 5rem;
+  background-color: #512da7;
+}

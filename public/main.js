@@ -70,6 +70,8 @@ const main = () => {
   getHeroImage()
   getFlightData()
   clearSlide()
+  clickLeft()
+  clickRight()
 }
 
 //clear slide function
@@ -89,8 +91,8 @@ const clickRight = () => {
 }
 
 document.querySelector('.button-left').addEventListener('click', clearSlide)
-document.querySelector('.button-left').addEventListener('click', getFlightData)
+document.querySelector('.button-left').addEventListener('click', clickLeft)
 document.querySelector('.button-right').addEventListener('click', clearSlide)
-document.querySelector('.button-right').addEventListener('click', getFlightData)
+document.querySelector('.button-right').addEventListener('click', clickRight)
 
 document.addEventListener('DOMContentLoaded', main)

@@ -22,22 +22,26 @@ const getFlightData = () => {
     })
     .then(missions => {
       console.log(missions)
-      document.querySelector('.launch-card').textContent =
-        missions + [''] + missions.mission_Name
+      document.querySelector('.launch-title').textContent =
+        missions[0].mission_Name
+      document.querySelector('.launch-site').textContent =
+        missions[index].launch_site.site_name_long
+      document.querySelector('.launch-description').textContent =
+        missions[index].details
     })
-    .then(missions => {
-      // console.log(missions.index]launch_site.site_name_long)
-    })
-  spaceX = missions
 }
-const showCurrentLaunchTitle = () => {
+const showCurrentLaunchSites = () => {
   document.querySelector('.launch-title').textContent = spaceX.mission_Name
+  document.querySelector('.launch-description').textContent = spaceX.details
+  document.querySelector('.launch-site').textContent =
+    spaceX.launch_site.site_name_long
+  spaceX = missions
 }
 
 const main = () => {
   getHeroImage()
   getFlightData()
-  showCurrentLaunchTitle()
+  showCurrentLaunchSites()
 }
 
 document.addEventListener('DOMContentLoaded', main)

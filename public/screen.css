@@ -56,9 +56,8 @@ nav.sub-menu h4 {
   padding-right: 0.5rem;
 }
 
-.copy-right {
-  height: -1rem;
-  width: 100%;
+.copy-right-info {
+  text-align: center;
 }
 
 .Upcoming-launch-title {
@@ -78,7 +77,6 @@ nav.sub-menu h4 {
   height: 15rem;
   display: flex;
   flex-direction: row;
-  justify-content: center;
 }
 
 .launch-card {
@@ -88,10 +86,34 @@ nav.sub-menu h4 {
   border-radius: 0.25rem;
   padding-top: 2rem;
   margin-top: 0.7rem;
+  margin-left: 5.5rem;
 }
 
 .button-left {
-  height: 54px;
+  display: flex;
+  background-color: #ffc107;
+  border-radius: 0 1.5rem 1.5rem 0;
+  margin-top: 6rem;
+  margin-bottom: 8rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+  padding-left: -5rem;
+}
+
+.button-right {
+  display: flex;
+  background-color: #ffc107;
+  border-radius: 1.5rem 0 0 1.5rem;
+  margin-top: 6rem;
+  margin-bottom: 8rem;
+  margin-left: 7rem;
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+
+.launch p {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .mission-statement {

@@ -28,9 +28,29 @@ const getFlightData = () => {
         missions[index].launch_site.site_name_long
       document.querySelector('.launch-description').textContent =
         missions[index].details
+      document
+        .querySelector('.button-left')
+        .addEventListener('click', function(e) {
+          if (index === 0) {
+            index = missions.length - 1
+          } else {
+            index--
+          }
+          showCurrentLaunch(missions[index])
+        })
+      document
+        .querySelector('.button-right')
+        .addEventListener('click', function(e) {
+          if (index === missions.length - 1) {
+            index = 0
+          } else {
+            index++
+          }
+          showCurrentLaunch(missions[index])
+        })
     })
 }
-const showCurrentLaunchSites = () => {
+const showCurrentLaunch = () => {
   document.querySelector('.launch-title').textContent = spaceX.mission_Name
   document.querySelector('.launch-description').textContent = spaceX.details
   document.querySelector('.launch-site').textContent =
@@ -41,7 +61,7 @@ const showCurrentLaunchSites = () => {
 const main = () => {
   getHeroImage()
   getFlightData()
-  showCurrentLaunchSites()
+  showCurrentLaunch()
 }
 
 document.addEventListener('DOMContentLoaded', main)
